@@ -22,15 +22,3 @@ It performs:
 ✅ LangChain Tool-Based Agent Planning  
 ✅ Conversational Memory with Context Awareness
 
----
-
-##  Project Structure
-
-sql_agent_project/
-│
-├── main.py
-├── agent_runner.py
-├── schema_extractor.py
-├── vector_store.py
-├── tools.py
-└── requirements.txt
