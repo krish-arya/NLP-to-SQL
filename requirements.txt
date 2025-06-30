@@ -1,0 +1,9 @@
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+chromadb
+sqlalchemy
+faiss-cpu
+google-generativeai
+langchain-memory
