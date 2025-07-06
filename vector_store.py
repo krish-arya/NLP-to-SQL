@@ -1,7 +1,13 @@
 import chromadb
-from langchain_community.embeddings import GoogleGenerativeAIEmbeddings
-
-EMBED_MODEL = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from dotenv import load_dotenv
+load_dotenv()
+import os
+google_api_key = os.getenv("GOOGLE_API")
+EMBED_MODEL = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001",
+    google_api_key = google_api_key
+    )
 
 def create_schema_store(schema_text_chunks, persist_dir="schema_db"):
     """

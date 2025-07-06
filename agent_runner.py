@@ -1,9 +1,14 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import AgentExecutor, create_openai_functions_agent
-from langchain_core.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
 
 from tools import generate_sql_tool, execute_sql_tool
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+google_api_key = os.getenv("GOOGLE_API")
 
 def build_agent():
     """
@@ -11,7 +16,10 @@ def build_agent():
     multilingual-aware system prompt, and Gemini 2.0 as LLM.
     """
     # Initialize Gemini Chat Model
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-pro")
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash",
+        google_api_key = google_api_key
+        )
 
     # Define tools available to the agent
     tools = [generate_sql_tool, execute_sql_tool]
@@ -32,7 +40,8 @@ Your capabilities:
 Be careful, thorough, and multilingual-aware.
 """),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("human", "{input}")
+        ("human", "{input}"),
+        ("ai", "{agent_scratchpad}") 
     ])
 
     # Conversation memory to hold past user-agent messages

@@ -1,4 +1,11 @@
 from langchain_core.tools import tool
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai
+
+load_dotenv()
+genai.configure(api_key=os.getenv("GOOGLE_API"))
+
 
 @tool
 def generate_sql_tool(question, schema_context):
@@ -7,7 +14,7 @@ def generate_sql_tool(question, schema_context):
     plus schema context into SQL.
     """
     from google.generativeai import GenerativeModel
-    model = GenerativeModel("gemini-2.0-pro")
+    model = GenerativeModel("gemini-2.0-flash")
     
     prompt = f"""
 You are a highly skilled SQL expert who understands multiple languages, including Indian languages such as Hindi, Tamil, Bengali, Marathi, etc.
