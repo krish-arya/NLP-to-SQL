@@ -1,0 +1,31 @@
+student_id,first_name,last_name,department,year,enrollment_date,grade,age
+201,Aarav,Sharma,Computer Science,3,2021-07-15,A,20
+202,Anaya,Verma,Electrical,2,2022-08-01,B+,19
+203,Vihaan,Mehta,Mechanical,4,2020-06-20,B,21
+204,Siya,Gupta,Civil,1,2023-01-10,A-,18
+205,Arjun,Jain,Computer Science,2,2022-07-22,A,19
+206,Ira,Malhotra,Electronics,3,2021-08-18,B,20
+207,Ayaan,Choudhary,Mechanical,1,2023-02-12,B-,18
+208,Myra,Bhatt,Computer Science,4,2020-07-30,A+,22
+209,Reyansh,Mishra,Civil,3,2021-06-25,C+,20
+210,Avni,Dubey,Electrical,1,2023-01-05,B+,18
+211,Krishna,Kapoor,Electronics,2,2022-09-15,B-,19
+212,Pari,Shah,Mechanical,3,2021-07-19,A-,20
+213,Advik,Aggarwal,Computer Science,2,2022-07-03,B+,19
+214,Tara,Nair,Civil,4,2020-08-11,A,22
+215,Atharv,Basu,Electrical,3,2021-06-01,B+,20
+216,Kaira,Pandey,Electronics,1,2023-01-25,C,18
+217,Rudra,Yadav,Computer Science,1,2023-02-10,A-,18
+218,Inaya,Singh,Mechanical,2,2022-07-27,B,19
+219,Darsh,Nath,Civil,3,2021-06-15,C,20
+220,Mishka,Banerjee,Electrical,4,2020-07-07,B+,21
+221,Cabir,Patel,Electronics,2,2022-09-05,A-,19
+222,Saanvi,Desai,Computer Science,3,2021-07-10,A,20
+223,Ishaan,Reddy,Mechanical,1,2023-02-02,C+,18
+224,Zoya,Iyer,Civil,2,2022-08-10,B,19
+225,Kabir,Joshi,Electrical,3,2021-06-29,B,20
+226,Meher,Rastogi,Electronics,4,2020-06-12,A+,22
+227,Neil,Sen,Computer Science,4,2020-07-03,B+,21
+228,Navya,Chauhan,Mechanical,2,2022-08-03,B,19
+229,Aarush,Kohli,Civil,1,2023-01-22,B-,18
+230,Aadhya,Dwivedi,Electrical,2,2022-08-18,C+,19

@@ -1,0 +1,11 @@
+employee_id,first_name,last_name,department,job_title,salary,hire_date
+101,John,Doe,Engineering,Software Engineer,75000,2019-04-15
+102,Jane,Smith,HR,HR Manager,68000,2021-06-01
+103,Emily,Johnson,Marketing,Marketing Executive,60000,2020-02-10
+104,Michael,Brown,Engineering,DevOps Engineer,82000,2018-09-23
+105,Linda,Williams,Finance,Financial Analyst,72000,2022-01-12
+106,David,Jones,Engineering,Software Engineer,77000,2023-03-19
+107,Sarah,Miller,Marketing,Content Strategist,61000,2020-11-25
+108,Robert,Davis,HR,Recruiter,64000,2021-10-30
+109,Jessica,Garcia,Finance,Accountant,69000,2017-12-05
+110,Daniel,Martinez,Engineering,Backend Developer,80000,2022-07-18
