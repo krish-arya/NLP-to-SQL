@@ -7,7 +7,7 @@ CONNECTION_STRING = "sqlite:///example.db"
 if __name__ == "__main__":
     print("\n=== Auto-SQL Agent with Vector Memory and Multilingual Conversational Support ===")
 
-    # 1. Extract and render schema
+    # 1. Extract and render schema 
     print("🔎 Extracting database schema...")
     schema = extract_schema(CONNECTION_STRING)
     schema_text = render_schema_text(schema)
@@ -46,5 +46,21 @@ if __name__ == "__main__":
         try:
             response = agent.invoke({"input": full_input})
             print("\nAgent:", response, "\n")
+            import re
+
+            agent_output = response['output'] if isinstance(response, dict) else response
+
+            # Extract SQL query from the agent output
+            sql_match = re.search(r"```sql\n(.*?)```", agent_output, re.DOTALL)
+            if sql_match:
+                sql_query = sql_match.group(1).strip()
+                print("✅ SQL to run:\n", sql_query)
+                from tools import execute_sql_tool
+                import os
+                connection_string = os.getenv("DATABASE_URL")  # adjust this key
+                result_text =execute_sql_tool(connection_string, sql_query)
+                print("🗣️ Answer:\n", result_text)
+
+
         except Exception as e:
             print("\n❌ [ERROR]:", str(e), "\n")

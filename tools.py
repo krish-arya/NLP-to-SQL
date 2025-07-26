@@ -44,10 +44,17 @@ def execute_sql_tool(connection_string, sql):
     """
     Execute the SQL and return results.
     """
+    print("📌 execute_sql_tool called with SQL:", sql)
     from sqlalchemy import create_engine, text
     engine = create_engine(connection_string)
     with engine.connect() as conn:
         result = conn.execute(text(sql))
         rows = result.fetchall()
         columns = result.keys()
-    return f"Columns: {columns}\nRows: {rows}"
+        # Turn results into readable English
+        if rows:
+            readable_rows = [", ".join(str(item) for item in row) for row in rows]
+            response = f"I found the following results:\n" + "\n".join(readable_rows)
+        else:
+            response = "No results found."
+    return response
