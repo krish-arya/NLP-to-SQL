@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+=======
 schema_db
 example.db
 node_modules
@@ -184,3 +210,4 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+>>>>>>> ad4878b5decbceb621ddf5f2696763e46d5afae4
