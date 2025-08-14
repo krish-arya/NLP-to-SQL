@@ -8,6 +8,16 @@ genai.configure(api_key=os.getenv("GOOGLE_API"))
 
 @tool
 def generate_sql_tool(question, schema_context):
+    """
+    Generate a valid SQL query (in English) from a natural language question.
+    
+    Args:
+        question (str): The natural language question (possibly in an Indian language).
+        schema_context (str): The database schema context for accurate query generation.
+
+    Returns:
+        str: The generated SQL query in English.
+    """
     from google.generativeai import GenerativeModel
     model = GenerativeModel("gemini-2.0-flash")
     prompt = f"""
@@ -32,8 +42,19 @@ def generate_sql_tool(question, schema_context):
     response = model.generate_content(prompt)
     return response.text.strip()
 
+
 @tool
 def execute_sql_tool(connection_string, sql):
+    """
+    Execute a given SQL query on a database and return the results.
+
+    Args:
+        connection_string (str): SQLAlchemy-compatible database connection string.
+        sql (str): The SQL query to execute.
+
+    Returns:
+        str: Human-readable results or a message if no rows are found.
+    """
     print("📌 execute_sql_tool called with SQL:", sql)
     from sqlalchemy import create_engine, text
     engine = create_engine(connection_string)
